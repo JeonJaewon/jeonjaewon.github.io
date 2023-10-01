@@ -45,7 +45,7 @@ const config = {
         blog: {
           routeBasePath: "/",
           blogTitle: "Blog",
-          showReadingTime: true,
+          showReadingTime: false,
         },
       }),
     ],
