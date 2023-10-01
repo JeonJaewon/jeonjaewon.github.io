@@ -7,10 +7,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "whateverlogs",
-  tagline: "Dinosaurs are cool",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://whateverlogs.github.io/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -18,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "JeonJaewon", // Usually your GitHub org/user name.
-  projectName: "blog", // Usually your repo name.
+  projectName: "whateverlogs", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
