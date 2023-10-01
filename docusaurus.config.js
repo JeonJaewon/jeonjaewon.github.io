@@ -9,15 +9,15 @@ const config = {
   title: "whateverlogs",
 
   // Set the production url of your site here
-  url: "https://whateverlogs.github.io/",
+  url: "https://jeonjaewon.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/jeonjaewon.github.io/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "JeonJaewon", // Usually your GitHub org/user name.
-  projectName: "whateverlogs", // Usually your repo name.
+  projectName: "jeonjaewon.github.io", // Usually your repo name.
   trailingSlash: false,
 
   onBrokenLinks: "throw",
