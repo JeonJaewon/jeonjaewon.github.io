@@ -47,6 +47,10 @@ const config = {
           blogTitle: "Blog",
           showReadingTime: false,
         },
+        gtag: {
+          trackingID: "G-0NXZ4Z35W5",
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
