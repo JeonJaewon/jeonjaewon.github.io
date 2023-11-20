@@ -43,7 +43,7 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         blog: {
-          routeBasePath: "/",
+          routeBasePath: "/blog",
           blogTitle: "Blog",
           showReadingTime: false,
         },
@@ -63,6 +63,14 @@ const config = {
       navbar: {
         title: "whateverlogs",
         items: [
+          {
+            href: "/blog",
+            label: "Blog",
+          },
+          {
+            href: "/docs/intro",
+            label: "Docs",
+          },
           {
             href: "https://github.com/JeonJaewon",
             label: "GitHub",
