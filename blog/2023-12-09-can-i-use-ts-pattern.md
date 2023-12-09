@@ -80,7 +80,7 @@ export const AfterPattern = () => {
 
 - 코드만 보고 동작을 100% 확실하게 예측하기 어려웠다.
 - 반대로 표현하면 어떤 동작을 원할 때 바로 코드로 옮기기 쉽지 않았다.
-- 예를 들어 어떤 구현을 특정 조건에 공통으로 적용시켜야 한다면? 굉장히 일상적인 구현이지만 ts-pattern으로 구현하려니 몇 가지 의문점이 있었고, 이런 단순한 코드조차 새로 학습해야한다는 점은 코드베이스에 익숙하지 않은 개발자에게는 큰 진입장벽이 될 수 있다고 생각했다.
+- 예를 들어 어떤 구현을 특정 조건에 공통으로 적용시켜야 한다면? 굉장히 일상적인 구현이지만 `ts-pattern`으로 구현하려니 몇 가지 의문점이 있었고, 이런 단순한 코드조차 새로 학습해야한다는 점은 코드베이스에 익숙하지 않은 개발자에게는 큰 진입장벽이 될 수 있다고 생각했다.
 - 조건과 분기는 구현에서 큰 비율을 차지하는데, 이걸 러닝커브가 있는 라이브러리를 도입할 만큼 뾰족하게 좋아진다는 느낌이 없었다. 확실한 이득이 있다면 도입을 고려했겠지만, 그 정도는 아니라고 판단했다.
 
 3. 실제 프로덕션 코드에서 적용할 만한 사례를 찾지 못함
@@ -90,15 +90,16 @@ export const AfterPattern = () => {
 - `when()`의 콜백으로 type predicates (i.e: `(val: any): val is undefined => { ... }`)가 포함된 타입 가드 함수를 또 만들어야 한다는게 지나친 오버헤드 같다. 그런 함수를 선언해야 한다면 원래 방식으로도 잘 분기할 수 있을 것 같았다.
 - 개인적인 취향으로 특정 조건에 대한 handler를 `with()`의 두 번째 인자인 function으로 넘겨야 하는데, 값으로 충분할 때도 함수 형태로 넘겨야 하는 점이 가독성이 조금 떨어진다고 느꼈다.
 
-- 조건이 복잡한 경우는 `switch(true)` 패턴으로 대체 가능할 듯
-  - Typescript 5.3 이전에는 `switch(true)` 에서 조건 내의 type narrowing이 되지 않는 문제가 있어서 어려움이 있었는데, 5.3 에서 개선되었기 때문에 굳이 `ts-pattern`을 쓸 이유는 없어 보인다.
-  - [릴리즈 노트 링크](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAlhAqmAJgUwGZzGlMC8MAFAIYBcMJYAngJQUnwQwCuqm2uBAfJQfoTbosOFACgxUagAc0MAPIAjAFYEYAbzExtMYCQBOKAPwUAwgbwAfVuxG4xAXwnYoafRhLA55wxq07FKgBrExhofWwAcxhHCTFQSFgMNmA1IhAVCiVlWh4-HTCAdzgoYAALIih9FjRczQKCvQg5AEIEZGFOFHSVADo9Q3p8hpGE6BgMEBA1DOV+i38RxvAIEAAbNF61kEieuYGUWgBuRaXtRX00EiCTs6cz06cHIA)
+4. 조건이 복잡한 경우는 `switch(true)` 패턴으로 대체 가능할 듯
+
+- Typescript 5.3 이전에는 `switch(true)` 에서 조건 내의 type narrowing이 되지 않는 문제가 있어서 어려움이 있었는데, 5.3 에서 개선되었기 때문에 굳이 `ts-pattern`을 쓸 이유는 없어 보인다.
+- [Typescript 릴리즈 노트 링크](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAlhAqmAJgUwGZzGlMC8MAFAIYBcMJYAngJQUnwQwCuqm2uBAfJQfoTbosOFACgxUagAc0MAPIAjAFYEYAbzExtMYCQBOKAPwUAwgbwAfVuxG4xAXwnYoafRhLA55wxq07FKgBrExhofWwAcxhHCTFQSFgMNmA1IhAVCiVlWh4-HTCAdzgoYAALIih9FjRczQKCvQg5AEIEZGFOFHSVADo9Q3p8hpGE6BgMEBA1DOV+i38RxvAIEAAbNF61kEieuYGUWgBuRaXtRX00EiCTs6cz06cHIA)
 
 결론적으로 도입하지 않기로 결정했다.
 
 ### 발견한 사이드 케이스
 
-`when()` 에 넘기는 함수에서 generic을 사용할 경우 type narrowaing이 되지 않았다.
+`when()` 에 넘기는 함수에서 generic을 사용할 경우 type narrowaing이 되지 않았다.
 
 ```ts
 // 이런 함수들을 넘겨도 이후 블럭에서 val이 T가 아닌 T | undefined로 추론되었다.
