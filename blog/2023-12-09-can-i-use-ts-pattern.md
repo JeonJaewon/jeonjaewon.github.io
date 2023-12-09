@@ -1,3 +1,9 @@
+---
+slug: can-i-use-ts-pattern
+title: ts-pattern을 도입해도 될까?
+tags: [typescript]
+---
+
 [ts-pattern](https://github.com/gvergnaud/ts-pattern)은 패턴 매칭을 Typeacript 환경에서 사용할 수 있는 라이브러리다.
 [패턴 매칭](https://en.wikipedia.org/wiki/Pattern_matching)은 주로 함수형 프로그래밍 언어에서 조건 및 분기 구현을 위해 사용한다고 한다.
 
@@ -103,4 +109,4 @@ const isDefined = <T>(val: T | undefined): val is T => {
 
 [issue](https://github.com/gvergnaud/ts-pattern/issues/64)도 생성되어 있는데 당장 해결은 어려운 듯 하다.
 
-재밌지만 조금 아쉬운 도구라고 느꼈다.
+재밌었지만 전체적으로 조금 아쉬운 도구라고 느꼈다.
