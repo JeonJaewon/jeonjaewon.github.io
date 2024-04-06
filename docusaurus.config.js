@@ -51,6 +51,12 @@ const config = {
           trackingID: "G-0NXZ4Z35W5",
           anonymizeIP: true,
         },
+        sitemap: {
+          changefreq: "weekly",
+          priority: 0.5,
+          ignorePatterns: ["/tags/**"],
+          filename: "sitemap.xml",
+        },
       }),
     ],
   ],
