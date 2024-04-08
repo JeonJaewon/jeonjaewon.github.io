@@ -65,6 +65,16 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
+      metadata: [
+        {
+          name: "keywords",
+          content: "programming, frontend, web, javascript, typescript",
+        },
+        {
+          name: "description",
+          content: "JeonJaewon's blog",
+        },
+      ],
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "whateverlogs",
