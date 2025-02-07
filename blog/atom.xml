@@ -2,10 +2,54 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jeonjaewon.github.io/blog</id>
     <title>whateverlogs Blog</title>
-    <updated>2024-02-19T00:00:00.000Z</updated>
+    <updated>2025-02-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jeonjaewon.github.io/blog"/>
     <subtitle>whateverlogs Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[도로명주소와 지번주소에서 상세주소 제거하는 법]]></title>
+        <id>https://jeonjaewon.github.io/blog/상세주소-없애기</id>
+        <link href="https://jeonjaewon.github.io/blog/상세주소-없애기"/>
+        <updated>2025-02-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[이건 내비게이션에 필요 없어요]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="이건-내비게이션에-필요-없어요">이건 내비게이션에 필요 없어요<a href="https://jeonjaewon.github.io/blog/%EC%83%81%EC%84%B8%EC%A3%BC%EC%86%8C-%EC%97%86%EC%95%A0%EA%B8%B0#%EC%9D%B4%EA%B1%B4-%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98%EC%97%90-%ED%95%84%EC%9A%94-%EC%97%86%EC%96%B4%EC%9A%94" class="hash-link" aria-label="이건 내비게이션에 필요 없어요에 대한 직접 링크" title="이건 내비게이션에 필요 없어요에 대한 직접 링크">​</a></h2>
+<p>업무하면서 도로명과 지번주소가 혼재되어 있는 데이터를 다룬 적이 있는데, 예를 들면 이런 데이터였습니다.</p>
+<ul>
+<li>주소1: 서울특별시 서초구 반포동 20-43 반포자이아파트 101동 101호</li>
+<li>주소2: 서울특별시 영등포구 국회대로62길 9 (여의도동)</li>
+</ul>
+<p>예시의 주소 1의 경우 지번주소, 주소2는 도로명주소 입니다.</p>
+<p>문제는 이 데이터를 토대로 내비게이션 API에 요청을 보내야 했는데, 저희가 사용 중인 API에서는 상세 주소에 대한 처리가 되어 있지 않아서 간혹 응답을 내리지 않는 경우가 있었습니다.</p>
+<p>주소 3을 예로 들면 상세주소에 해당하는 <code>반포자이아파트 101동 101호</code>에서 <code>101호</code>는 사실 길찾기에 필요한 정보는 아닙니다. 이걸 포함시켜서 요청하면 길을 제대로 찾지 못하더라구요.</p>
+<p>이해를 돕기 위해 주소를 두 가지로 분류해 보겠습니다.</p>
+<ol>
+<li>배송을 위한 주소</li>
+<li>길찾기를 위한 주소</li>
+</ol>
+<p>1과 2가 같은 경우도 분명 있지만, 공동주택 등의 경우 정확한 호수를 찾기 위한 상세주소가 더해지기 때문에 표기에 차이가 생깁니다.</p>
+<p>제가 겪은 문제의 경우 2만 취급하는 API에 1을 보냈기 때문에 발생한 문제였습니다.</p>
+<p>그렇다면 문자열 뒷부분의 상세주소만 제거해서 요청하면 되겠다는 생각이 듭니다. 이제 이 문자열들의 어디서부터가 상세주소인지를 찾아야 합니다.</p>
+<p>그렇다면 섞여 있는 도로명주소와 지번주소를 각각 다르게 파싱해야 할까요? 애초에 별도의 칼럼이 없는데 문자열만 보고 이 둘을 구분할 수는 있을까요?</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="모르겠을-땐-문서를-보기">모르겠을 땐 문서를 보기<a href="https://jeonjaewon.github.io/blog/%EC%83%81%EC%84%B8%EC%A3%BC%EC%86%8C-%EC%97%86%EC%95%A0%EA%B8%B0#%EB%AA%A8%EB%A5%B4%EA%B2%A0%EC%9D%84-%EB%95%90-%EB%AC%B8%EC%84%9C%EB%A5%BC-%EB%B3%B4%EA%B8%B0" class="hash-link" aria-label="모르겠을 땐 문서를 보기에 대한 직접 링크" title="모르겠을 땐 문서를 보기에 대한 직접 링크">​</a></h2>
+<p><a href="https://www.juso.go.kr/openIndexPage.do" target="_blank" rel="noopener noreferrer">도로명주소 안내 시스템</a>에 가보면 도로명 주소 소개 pdf 파일을 배포하고 있습니다.</p>
+<p><img loading="lazy" alt="Example banner" src="https://jeonjaewon.github.io/assets/images/address-comparison-3d2fe4601b823fb92a9630eddcf4bb7c.png" width="789" height="574" class="img_ev3q"></p>
+<p>눈여겨보아야 할 부분은 가운데의 <code>동/리 지번</code>이 <code>도로명 건물번호</code>에 대응된다는 점입니다. 자세한 <code>도로명 건물번호</code> 규칙은 아래와 같은데요.</p>
+<p><img loading="lazy" alt="Example banner" src="https://jeonjaewon.github.io/assets/images/road-address-ecc29797f25a6dfa46ee1c30106dc53a.png" width="805" height="200" class="img_ev3q"></p>
+<p>이 부분이 중요합니다. 도로명은 붙여 쓰고, 도로명과 건물번호는 띄우기 때문에 이는 기존의 <code>동/리 지번</code>과 공백을 기준으로 호환이 된다고 볼 수 있습니다.</p>
+<p>무슨 말인지 앞서 보았던 예시를 다시 보겠습니다.</p>
+<ul>
+<li>주소1: 서울특별시 서초구 <strong>반포동 20-43</strong> 반포자이아파트 101동 101호</li>
+<li>주소2: 서울특별시 영등포구 <strong>국회대로62길 9</strong> (여의도동)</li>
+</ul>
+<p>지번주소의 <code>동/리 지번</code>은 <code>반포동 20-43</code>, 도로명주소의 <code>도로명 건물번호</code>는 <code>국회대로62길 9</code>에 해당하는 것을 알 수 있습니다. 그리고 이 주소들은 모두 가운데에 공백 문자를 1개 포함한 문자열입니다.</p>
+<p>이 주소들 이후부터는 상세주소가 나오는 것을 확인할 수 있습니다.</p>
+<p>즉, 도로명이냐 지번이냐에 관계 없이 단순히 문자열을 공백을 기준으로 앞에서부터 4번 취하면 상세주소를 제거한 주소를 얻을 수 있습니다.</p>
+<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token string" style="color:#e3116c">"서울특별시 서초구 반포동 20-43 반포자이아파트 101동 101호"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">split</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">" "</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">slice</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">4</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">join</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">" "</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// '서울특별시 서초구 반포동 20-43'</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token string" style="color:#e3116c">"서울특별시 영등포구 국회대로62길 9 (여의도동)"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">split</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">" "</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">slice</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">0</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">4</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">join</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">" "</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// '서울특별시 영등포구 국회대로62길 9'</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="클립보드에 코드 복사" title="복사" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>이제 이 문자열이 신주소인지 구주소인지와는 관계 없이 간단한 방법으로 상세주소를 제거할 수 있습니다.</p>]]></content>
+        <category label="programming" term="programming"/>
+        <category label="map" term="map"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[내가 2023년에 배운 것들]]></title>
         <id>https://jeonjaewon.github.io/blog/2023-retro</id>
