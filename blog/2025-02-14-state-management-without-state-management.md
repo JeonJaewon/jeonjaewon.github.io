@@ -1,6 +1,6 @@
 ---
 slug: overlay-kit
-title: 프론트엔드 상태관리 잘 하는 방법: 상태관리를 하지 않는다 (feat. overlay-kit)
+title: 프론트엔드 상태관리 잘 하는 방법. 상태관리를 하지 않는다 (feat. overlay-kit)
 tags: [frontend, state management, overlay-kit]
 ---
 
