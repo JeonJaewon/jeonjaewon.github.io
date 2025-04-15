@@ -12,7 +12,7 @@ tags: [programming]
 
 <video controls>
   <source src="/static/video/copilot_edit_example.mp4" type="video/mp4">
-  해당 브라우저는 동영상을 지원하지 않습니다. [여기](https://jeonjaewon.github.io/assets/videos/copilot_edit_example.mp4)에서 직접 확인하세요.
+  해당 브라우저는 동영상을 지원하지 않습니다. [여기](https://jeonjaewon.github.io/static/video/copilot_edit_example.mp4)에서 직접 확인하세요.
 </video>
 
 copilot edit 기능을 적극적으로 활용했다. 웹 오디오 API에 대한 지식이 거의 없었는데, copilot이 관련된 코드를 잘 만들어줘서 큰 도움이 됐다. 만들어진 코드를 수정하다 보니 오디오 API에 대해서 이해가 되는 부분도 꽤 있었다.
