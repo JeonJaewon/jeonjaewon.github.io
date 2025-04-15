@@ -21,7 +21,7 @@ const config = {
   projectName: "jeonjaewon.github.io", // Usually your repo name.
   trailingSlash: false,
 
-  favicon: "/img/favicon-48.svg",
+  favicon: "/img/favicon.svg",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
