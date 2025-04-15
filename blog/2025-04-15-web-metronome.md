@@ -1,0 +1,24 @@
+---
+slug: web-metronome
+title: 내가 필요해서 만든 웹 메트로놈
+tags: [programming]
+---
+
+악기 연습할 때 메트로놈을 사용하는데, 웹에서 써본 메트로놈들은 기능적으로 완벽하게 마음에 드는 경우가 잘 없었다.
+
+특히 볼륨 조절이 없는 경우가 많아서 그냥 유튜브에서 `xxx BPM metronome` 같은 영상을 틀고 연습하는 경우가 많았다.
+
+그런데 유튜브 영상은 BPM을 조절하려면 다른 영상을 서치해서 재생하는 과정이 너무 번거로워서 이럴거면 하나 만들어보자 싶어서 만들었다.
+
+<video controls>
+  <source src="/static/video/copilot_edit_example.mp4" type="video/mp4">
+  해당 브라우저는 동영상을 지원하지 않습니다. [여기](https://jeonjaewon.github.io/assets/videos/copilot_edit_example.mp4)에서 직접 확인하세요.
+</video>
+
+copilot edit 기능을 적극적으로 활용했다. 웹 오디오 API에 대한 지식이 거의 없었는데, copilot이 관련된 코드를 잘 만들어줘서 큰 도움이 됐다. 만들어진 코드를 수정하다 보니 오디오 API에 대해서 이해가 되는 부분도 꽤 있었다.
+
+첫 삽 부터 작동하는 프로토타입을 완성하는 데 2~3시간 정도 사용한 것 같다. 그 이후로도 종종 들여다보고 리팩터 하거나 기능을 추가해주고 있다.
+
+아래 링크에 배포해 두었다!
+
+[https://jeonjaewon.github.io/web-metronome/](https://jeonjaewon.github.io/web-metronome/)
