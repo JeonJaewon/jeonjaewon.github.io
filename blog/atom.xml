@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jeonjaewon.github.io/blog"/>
     <subtitle>whateverlogs Blog</subtitle>
-    <icon>https://jeonjaewon.github.io/img/favicon-48.svg</icon>
+    <icon>https://jeonjaewon.github.io/img/favicon.svg</icon>
     <entry>
         <title type="html"><![CDATA[프론트엔드 상태관리 잘 하는 방법. 상태관리를 하지 않는다 (feat. overlay-kit)]]></title>
         <id>https://jeonjaewon.github.io/blog/overlay-kit</id>
