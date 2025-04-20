@@ -318,7 +318,7 @@ overlay-kit은 React에서 오버레이들의 상태를 간편하게 다루는�
 <p>발생시켜야 하는 side effect가 그 어떤 이벤트 핸들러로도 처리가 어렵다면, 마지막 옵션으로 useEffect를 활용한다.</p>
 <p>결론적으로, 우리가 제어하고 싶은 상황은 <strong>이벤트다</strong>. 퍼널을 이탈하는 동작은 뒤로 가기 버튼을 클릭하는 것 처럼 이벤트로서 처리될 수 있기 때문이다.</p>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="데이터를-어떻게-관리할-것인가"><strong>데이터를 어떻게 관리할 것인가?</strong><a href="https://jeonjaewon.github.io/blog/use-effect-with-funnel#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B4%80%EB%A6%AC%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80" class="hash-link" aria-label="��데이터를-어떻게-관리할-것인가에 대한 직접 링크" title="데이터를-어떻게-관리할-것인가에 대한 직접 링크">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="데이터를-어떻게-관리할-것인가"><strong>데이터를 어떻게 관리할 것인가?</strong><a href="https://jeonjaewon.github.io/blog/use-effect-with-funnel#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B4%80%EB%A6%AC%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80" class="hash-link" aria-label="데이터를-어떻게-관리할-것인가에 대한 직접 링크" title="데이터를-어떻게-관리할-것인가에 대한 직접 링크">​</a></h3>
 <p>한 퍼널에 해당하는 코드들을 하나의 모듈에 위치시켜 <strong>응집도를 높여야 전체적인 데이터 흐름이 관리될 수</strong> 있다고 생각했다.</p>
 <p><strong>이벤트 핸들러로 클리어하는 로직들이 곳곳에 산재되어 있으면 전역 상태에 대한 관리가 힘들어진다.</strong> 어떤 퍼널에서는 어떤 데이터를 클리어해야하고, 그 후 진입 시에는 어떤 데이터가 남아 있을 것이고.. 이런 것들을 생각하면 상태를 추적하기에 어려움이 있을 수 있다.</p>
 <p>toss의 slash 라이브러리에 <a href="https://slash.page/ko/libraries/react/use-funnel/readme.i18n/" target="_blank" rel="noopener noreferrer">useFunnel</a>라는 hook이 있다, 이처럼 한 퍼널에 해당하는 스텝들을 관리하는 방법도 좋은 것 같다.</p>
