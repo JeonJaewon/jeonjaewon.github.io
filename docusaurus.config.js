@@ -38,9 +38,7 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-        },
+        docs: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -48,6 +46,7 @@ const config = {
           routeBasePath: "/blog",
           blogTitle: "Blog",
           showReadingTime: false,
+          blogSidebarCount: "ALL",
         },
         gtag: {
           trackingID: "G-0NXZ4Z35W5",
@@ -84,10 +83,6 @@ const config = {
           {
             href: "/blog",
             label: "Blog",
-          },
-          {
-            href: "/docs/intro",
-            label: "Docs",
           },
           {
             href: "https://github.com/JeonJaewon",
