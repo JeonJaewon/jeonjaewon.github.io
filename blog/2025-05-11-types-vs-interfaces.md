@@ -59,15 +59,15 @@ type으로 선언된 `C`의 경우 불가능한 타입임에도 단순 타입간
 ### 성능 관점 - 벤치마크로 확인하기
 
 또한 두 확장 방식은 성능에 있어서도 차이가 있다.
-[Typescript 공식 레포 wiki](https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections)에 따르면, ts 컴파일러는 `interface`를 사용한 확장 방식을 더 빠르게 처리한다고 한다.
+[Typescript 공식 레포 wiki](https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections)에 따르면, ts 컴파일러는 `type`의 `intersection` 보다 `interface`의 `extends`를 더 빠르게 처리한다고 한다.
 
 > Interfaces also display consistently better, whereas type aliases to intersections can't be displayed in part of other intersections. Type relationships between interfaces are also cached, as opposed to intersection types as a whole. A final noteworthy difference is that when checking against a target intersection type, every constituent is checked before checking against the "effective"/"flattened" type.
 
-마지막 문장을 보면 큰 객체 타입에 대해서 type을 사용한다면 성능에 꽤 영향이 있을지도 모르겠다는 생각이 들었다.
+마지막 문장을 보면 큰 객체 타입에 대해서 `type`을 사용한다면 성능에 꽤 영향이 있을지도 모르겠다는 생각이 들었다.
 
 실제로 이 둘의 성능이 얼마나 차이가 나나 확인해보기 위해 벤치마크를 작성했다.
 
-Type 확장 케이스에 대해 실행시킬 코드는 아래와 같다.
+`type` 확장 케이스에 대해 실행시킬 코드는 아래와 같다.
 
 ```ts
 import { performance } from "perf_hooks";
@@ -106,7 +106,7 @@ export function measureTypePerformance(iterations: number): number[] {
 
 더 자세한 사항은 [레포지터리](https://github.com/JeonJaewon/type-interface-benchmark)에서 확인할 수 있다.
 
-이렇게 1000개의 Type 확장 / interface 확장을 각각 10번 컴파일하여 실행 시간을 비교해보았다.
+이렇게 1000개의 `type` 확장 / `interface` 확장을 각각 10번 컴파일하여 실행 시간을 비교해보았다.
 
 - Type Compile Stats (ms)
   - Average: 1369.50085
@@ -122,6 +122,6 @@ export function measureTypePerformance(iterations: number): number[] {
 
 ## 결론
 
-타입 확장에 대해서는 interface가 성능적으로 유리하다. (그러나 큰 차이라고 볼 수는 없다)
+타입 확장에 대해서는 `interface`가 성능적으로 유리하다. (그러나 큰 차이라고 볼 수는 없다)
 
-가능하면 interface를 먼저 사용하고, type 기능이 필요한 경우에만 type을 사용하자.
+가능하면 `interface`를 먼저 사용하고, `type` 기능이 필요한 경우에만 `type`을 사용하자.
