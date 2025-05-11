@@ -6,6 +6,8 @@ tags: [programming, typescript]
 
 Typescript에서 `type`과 `interface`에 대한 유튜브 영상을 보다가 좀 정리해두고 싶어서 글로 남긴다.
 
+### 예제
+
 ```ts
 // interface 사용
 interface User {
