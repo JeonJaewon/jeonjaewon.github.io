@@ -45,14 +45,16 @@ interface B {
 interface C extends A, B {} // Error: Interface C cannot simultaneously extend types 'A' and 'B'
 ```
 
-`a` 프로퍼티가 `string` 이면서 `number`일 수 없는 경우이다.
-타입 `C`의 경우 논리적으로 불가능한 타입임에도 단순 타입간의 intersection으로 표기된다.
+`a` 프로퍼티가 `string` 이면서 `number` 로 선언되어 있기 때문에 `C` 타입은 논리적으로 불가능하다.
+type으로 선언된 `C`의 경우 불가능한 타입임에도 단순 타입간의 intersection으로 표기된다.
 
 반면 `interface`의 경우 두 타입을 extends 할 수 없다는 에러가 발생한다.
 
 `interface`를 사용하는 것이 에러를 더 빨리 발견할 수 있다는 점에서 장점이 있다고 생각한다. 또한 타입스크립트가 추론해주는 타입도 intersection에 비해 더 명확하다.
 
 ---
+
+### 성능 관점 - 벤치마크로 확인하기
 
 또한 두 확장 방식은 성능에 있어서도 차이가 있다.
 [Typescript 공식 레포 wiki](https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections)에 따르면, ts 컴파일러는 `interface`를 사용한 확장 방식을 더 빠르게 처리한다고 한다.
