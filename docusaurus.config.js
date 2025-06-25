@@ -85,6 +85,10 @@ const config = {
             label: "Blog",
           },
           {
+            href: "https://jeonjaewon.github.io/web-metronome",
+            label: "Playground",
+          },
+          {
             href: "https://github.com/JeonJaewon",
             label: "GitHub",
             position: "right",
