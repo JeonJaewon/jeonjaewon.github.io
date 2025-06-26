@@ -89,6 +89,11 @@ const config = {
             label: "Playground",
           },
           {
+            href: "https://www.linkedin.com/in/%EC%9E%AC%EC%9B%90-%EC%A0%84-b4b704200/",
+            label: "LinkedIn",
+            position: "right",
+          },
+          {
             href: "https://github.com/JeonJaewon",
             label: "GitHub",
             position: "right",
