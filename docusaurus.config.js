@@ -81,14 +81,6 @@ const config = {
         title: "whateverlogs",
         items: [
           {
-            href: "/blog",
-            label: "Blog",
-          },
-          {
-            href: "https://jeonjaewon.github.io/web-metronome",
-            label: "Playground",
-          },
-          {
             href: "https://www.linkedin.com/in/%EC%9E%AC%EC%9B%90-%EC%A0%84-b4b704200/",
             label: "LinkedIn",
             position: "right",
