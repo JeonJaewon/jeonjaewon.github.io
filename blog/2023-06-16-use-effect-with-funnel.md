@@ -1,6 +1,7 @@
 ---
 slug: use-effect-with-funnel
 title: useEffect cleanup과 퍼널 관리에 대한 생각들
+description: React useEffect cleanup으로 상태를 초기화할 때 생기는 문제와 이벤트 기반으로 퍼널 상태를 관리하는 방법을 살펴봅니다.
 tags: [react, useEffect]
 ---
 

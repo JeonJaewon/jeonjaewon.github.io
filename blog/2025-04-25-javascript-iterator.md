@@ -1,6 +1,7 @@
 ---
 slug: javascript-iterator
 title: 멀티패러다임 프로그래밍과 반복자 (Iterator) 패턴에 대한 짧은 글
+description: JavaScript 반복자 패턴의 지연 평가와 메모리 효율성을 예제로 살펴보고 멀티패러다임 프로그래밍의 장점을 소개합니다.
 tags: [programming, javascript, iterator]
 ---
 

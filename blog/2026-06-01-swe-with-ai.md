@@ -1,6 +1,7 @@
 ---
 slug: 24-25-retro
 title: AI 시대의 개발자에 대한 소고
+description: AI 코딩 에이전트가 개발 방식을 바꾸는 시대에 소프트웨어 엔지니어의 역할과 책임이 어떻게 달라지는지 생각해 봅니다.
 tags: [career, ai]
 ---
 

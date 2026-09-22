@@ -1,6 +1,7 @@
 ---
 slug: can-i-use-ts-pattern
 title: ts-pattern을 도입해도 될까?
+description: TypeScript 프로젝트에 ts-pattern을 도입할 때 얻는 장점과 번들 크기, 러닝 커브 등 고려할 점을 검토합니다.
 tags: [typescript]
 ---
 

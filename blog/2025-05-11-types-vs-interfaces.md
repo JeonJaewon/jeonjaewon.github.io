@@ -1,6 +1,7 @@
 ---
 slug: types-vs-interfaces
-title: Typescript에서 types vs interfaces 대해서
+title: TypeScript의 type과 interface 차이
+description: TypeScript에서 type과 interface의 확장, 선언 병합, 유니온 표현 차이를 비교하고 선택 기준을 정리합니다.
 tags: [programming, typescript]
 ---
 

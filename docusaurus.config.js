@@ -23,7 +23,11 @@ const config = {
 
   favicon: "/img/favicon.svg",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -53,9 +57,15 @@ const config = {
           anonymizeIP: true,
         },
         sitemap: {
-          changefreq: "weekly",
-          priority: 0.5,
-          ignorePatterns: ["/tags/**"],
+          lastmod: "date",
+          changefreq: null,
+          priority: null,
+          ignorePatterns: [
+            "/blog/tags",
+            "/blog/tags/**",
+            "/blog/archive",
+            "/blog/page/**",
+          ],
           filename: "sitemap.xml",
         },
       }),
@@ -73,7 +83,8 @@ const config = {
         },
         {
           name: "description",
-          content: "JeonJaewon's blog",
+          content:
+            "프론트엔드 개발과 소프트웨어 엔지니어링에 관한 경험과 생각을 기록하는 기술 블로그입니다.",
         },
       ],
       image: "img/docusaurus-social-card.jpg",

@@ -1,6 +1,7 @@
 ---
 slug: good-bye-saga
 title: redux-saga와 헤어질 결심
+description: redux-saga를 제거하기로 결정한 이유를 러닝 커브, 코드 변경의 영향, 재사용성과 테스트 관점에서 정리합니다.
 tags: [redux, redux-saga, server state]
 ---
 

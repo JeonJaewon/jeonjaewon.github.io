@@ -1,6 +1,7 @@
 ---
 slug: overlay-kit
 title: 프론트엔드 상태관리 잘 하는 방법. 상태관리를 하지 않는다 (feat. overlay-kit)
+description: React 오버레이 상태를 useState나 전역 상태 없이 overlay-kit으로 관리하며 상태관리 복잡도를 줄이는 방법을 소개합니다.
 tags: [frontend, state management, overlay-kit]
 ---
 

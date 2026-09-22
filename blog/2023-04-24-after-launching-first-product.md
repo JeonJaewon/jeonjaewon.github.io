@@ -1,6 +1,7 @@
 ---
 slug: after-launching-first-product
 title: 첫 제품을 배포하고 배운 것들
+description: 첫 제품을 기획하고 배포하는 과정에서 배운 일정 산정, PR 크기, 사용자 수요와 협업에 대한 회고입니다.
 tags: [career, retrospect]
 ---
 

@@ -14,7 +14,10 @@ export default function Index() {
   const posts: BlogPostItem[] = blogPostList?.items || [];
 
   return (
-    <Layout title="Home" description="All blog posts">
+    <Layout
+      title="기술 블로그"
+      description="프론트엔드 개발과 소프트웨어 엔지니어링에 관한 경험과 생각을 기록하는 기술 블로그입니다."
+    >
       <main style={{ maxWidth: "900px", margin: "0 auto", padding: "2rem" }}>
         <div style={{ marginTop: "2rem" }}>
           {posts.map((post, index) => (
