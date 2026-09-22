@@ -119,22 +119,6 @@ type으로 선언된 <code>C</code>의 경우 불가능한 타입임에도 단�
             <category>iterator</category>
         </item>
         <item>
-            <title><![CDATA[내가 필요해서 만든 웹 메트로놈]]></title>
-            <link>https://jeonjaewon.github.io/blog/web-metronome</link>
-            <guid>https://jeonjaewon.github.io/blog/web-metronome</guid>
-            <pubDate>Tue, 15 Apr 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[필요한 기능을 직접 구현한 웹 메트로놈의 개발 과정과 GitHub Copilot, Web Audio API를 활용한 경험을 공유합니다.]]></description>
-            <content:encoded><![CDATA[<p>악기 연습할 때 메트로놈을 사용하는데, 웹에서 써본 메트로놈들은 기능적으로 완벽하게 마음에 드는 경우가 잘 없었다.</p>
-<p>특히 볼륨 조절이 없는 경우가 많아서 그냥 유튜브에서 <code>xxx BPM metronome</code> 같은 영상을 틀고 연습하는 경우가 많았다.</p>
-<p>그런데 유튜브 영상은 BPM을 조절하려면 다른 영상을 서치해서 재생하는 과정이 너무 번거로워서 이럴거면 하나 만들어보자 싶어서 만들었다.</p>
-<video controls=""><source src="/video/copilot_edit_example.mp4"></video>
-<p>copilot edit 기능을 적극적으로 활용했다. 웹 오디오 API에 대한 지식이 거의 없었는데, copilot이 관련된 코드를 잘 만들어줘서 큰 도움이 됐다. 만들어진 코드를 수정하다 보니 오디오 API에 대해서 이해가 되는 부분도 꽤 있었다.</p>
-<p>첫 삽 부터 작동하는 프로토타입을 완성하는 데 2~3시간 정도 사용한 것 같다. 그 이후로도 종종 들여다보고 리팩터 하거나 기능을 추가해주고 있다.</p>
-<p>아래 링크에 배포해 두었다!</p>
-<p><a href="https://jeonjaewon.github.io/web-metronome/" target="_blank" rel="noopener noreferrer" class="">https://jeonjaewon.github.io/web-metronome/</a></p>]]></content:encoded>
-            <category>programming</category>
-        </item>
-        <item>
             <title><![CDATA[프론트엔드 상태관리 잘 하는 방법. 상태관리를 하지 않는다 (feat. overlay-kit)]]></title>
             <link>https://jeonjaewon.github.io/blog/overlay-kit</link>
             <guid>https://jeonjaewon.github.io/blog/overlay-kit</guid>
@@ -198,7 +182,7 @@ overlay-kit은 React에서 오버레이들의 상태를 간편하게 다루는�
             <guid>https://jeonjaewon.github.io/blog/상세주소-없애기</guid>
             <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[도로명주소와 지번주소가 섞인 문자열에서 길찾기에 불필요한 상세주소를 규칙 기반으로 제거하는 방법을 설명합니다.]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="이건-내비게이션에-필요-�없어요">이건 내비게이션에 필요 없어요<a href="https://jeonjaewon.github.io/blog/%EC%83%81%EC%84%B8%EC%A3%BC%EC%86%8C-%EC%97%86%EC%95%A0%EA%B8%B0#%EC%9D%B4%EA%B1%B4-%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98%EC%97%90-%ED%95%84%EC%9A%94-%EC%97%86%EC%96%B4%EC%9A%94" class="hash-link" aria-label="이건 내비게이션에 필요 없어요에 대한 직접 링크" title="이건 내비게이션에 필요 없어요에 대한 직접 링크" translate="no">​</a></h2>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="이건-내비게이션에-필요-없어요">이건 내비게이션에 필요 없어요<a href="https://jeonjaewon.github.io/blog/%EC%83%81%EC%84%B8%EC%A3%BC%EC%86%8C-%EC%97%86%EC%95%A0%EA%B8%B0#%EC%9D%B4%EA%B1%B4-%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98%EC%97%90-%ED%95%84%EC%9A%94-%EC%97%86%EC%96%B4%EC%9A%94" class="hash-link" aria-label="이�건 내비게이션에 필요 없어요에 대한 직접 링크" title="이건 내비게이션에 필요 없어요에 대한 직접 링크" translate="no">​</a></h2>
 <p>업무하면서 도로명과 지번주소가 혼재되어 있는 데이터를 다룬 적이 있는데, 예를 들면 이런 데이터였습니다.</p>
 <ul>
 <li class="">주소1: 서울특별시 서초구 반포동 20-43 반포자이아파트 101동 101호</li>
@@ -330,7 +314,7 @@ overlay-kit은 React에서 오버레이들의 상태를 간편하게 다루는�
 <p>또한 우리 코드는 side effect 의 제어를 제외한 부분까지도 saga로 구현된 부분이 다수 존재했다. 예를 들면 팝업을 열거나 닫는 로직조차 saga로 작성되어 있다. 어떻게 보면 비즈니스 로직까지 saga라는 레이어에 포함시킨 것이다. 그 결과 saga에서 select 혹은 put하기 위해 redux에 있을 필요 없는 상태 조차 redux에 넣고 있었다.
 이는 또 한 번 store를 비대하게 만들었다.</p>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-typescript-타이핑의-관점">5. Typescript 타이핑의 관점<a href="https://jeonjaewon.github.io/blog/good-bye-saga#5-typescript-%ED%83%80%EC%9D%B4%ED%95%91%EC%9D%98-%EA%B4%80%EC%A0%90" class="hash-link" aria-label="5. Typescript 타이핑의 관점에 대한 직접 링크" title="5. Typescript 타이핑의 관점에 대한 직접 링크" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-typescript-타이핑의-관점">5. Typescript 타이핑의 관점<a href="https://jeonjaewon.github.io/blog/good-bye-saga#5-typescript-%ED%83%80%EC%9D%B4%ED%95%91%EC%9D%98-%EA%B4%80%EF%BF%BD%EF%BF%BD%EC%A0%90" class="hash-link" aria-label="5. Typescript 타이핑의 관점에 대한 직접 링크" title="5. Typescript 타이핑의 관점에 대한 직접 링크" translate="no">​</a></h3>
 <p>saga는 Typescript native로 작성된 라이브러리가 아니다. 타이핑을 개선하기 위한 커뮤니티 라이브러리 (i.e. <code>typed-redux-saga</code>) 들이 있지만 이것도 그리 만족스러운 타입스크립트 코딩 경험을 주진 못했다.</p>
 <p>다만 개인적으로 DX는 결국 비즈니스를 지탱하기 위한 최소 생산성을 담보하기 위한 선만 지켜도 된다고 생각하고, <code>typed-redux-saga</code>를 이용한 개발 경험이 아슬아슬하지만 그 선 이상은 지켜준다고 생각하기에 언급만 하고 넘어가겠다.</p>
 <hr>
@@ -399,7 +383,7 @@ overlay-kit은 React에서 오버레이들의 상태를 간편하게 다루는�
             <guid>https://jeonjaewon.github.io/blog/use-effect-with-funnel</guid>
             <pubDate>Fri, 16 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[React useEffect cleanup으로 상태를 초기화할 때 생기는 문제와 이벤트 기반으로 퍼널 상태를 관리하는 방법을 살펴봅니다.]]></description>
-            <content:encoded><![CDATA[<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="개요"><strong>개요</strong><a href="https://jeonjaewon.github.io/blog/use-effect-with-funnel#%EA%B0%9C%EF%BF%BD%EF%BF%BD%EC%9A%94" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크" translate="no">​</a></h3>
+            <content:encoded><![CDATA[<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="개요"><strong>개요</strong><a href="https://jeonjaewon.github.io/blog/use-effect-with-funnel#%EA%B0%9C%EC%9A%94" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크" translate="no">​</a></h3>
 <p>퍼널을 이탈할 때, 유저가 업데이트한 상태를 초기 상태로 clear하는 요구사항에 대해서 고민하다가 생각한 내용들을 정리해보았다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tldr"><strong>TL;DR</strong><a href="https://jeonjaewon.github.io/blog/use-effect-with-funnel#tldr" class="hash-link" aria-label="tldr에 대한 직접 링크" title="tldr에 대한 직접 링크" translate="no">​</a></h3>
 <ul>
@@ -415,7 +399,7 @@ overlay-kit은 React에서 오버레이들의 상태를 간편하게 다루는�
 <li class="">환경변수를 참조하는 등(dev인지 확인하고 분기) 어떻게든 cleanup을 단 한 번 실행시킨다.</li>
 <li class="">useEffect가 아닌 다른 방법을 통해 구현한다.</li>
 </ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cleanup이-솔루션이-될-수-��없는-이유"><strong>cleanup이 솔루션이 될 수 없는 이유</strong><a href="https://jeonjaewon.github.io/blog/use-effect-with-funnel#cleanup%EC%9D%B4-%EC%86%94%EB%A3%A8%EC%85%98%EC%9D%B4-%EB%90%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%9C%A0" class="hash-link" aria-label="cleanup이-솔루션이-될-수-없는-이유에 대한 직접 링크" title="cleanup이-솔루션이-될-수-없는-이유에 대한 직접 링크" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cleanup이-솔루션이-될-수-없는-이유"><strong>cleanup이 솔루션이 될 수 없는 이유</strong><a href="https://jeonjaewon.github.io/blog/use-effect-with-funnel#cleanup%EC%9D%B4-%EC%86%94%EB%A3%A8%EC%85%98%EC%9D%B4-%EB%90%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%9C%A0" class="hash-link" aria-label="cleanup이-솔루션이-될-수-없는-이유에 대한 직접 링크" title="cleanup이-솔루션이-될-수-없는-이유에 대한 직접 링크" translate="no">​</a></h3>
 <p>useEffect cleanup이 솔루션이 될 수 없다고 생각한 이유는 그 <strong>멘탈모델이 동기화를 구현하는 것</strong> 이기 때문이다. 요구사항은 유저가 특정 퍼널에 진입하거나, 어떤 버튼을 누르는 등의 동작을 했을 때 그에 반응하는 동작을 정의하면 될 뿐이다. 즉, <strong>단순히 화면에서 사라질 때를 캐치하기 위해 cleanup을 사용하는 것은 완전 잘못된 사고방식일 수 있다</strong>.</p>
 <p>그렇다면 다른 해결책은 무엇이 있을까?</p>
 <p>기본적으로 리액트에서 <a href="https://react.dev/learn/keeping-components-pure#where-you-_can_-cause-side-effects" target="_blank" rel="noopener noreferrer" class="">컴포넌트는 렌더에 대해서 퓨어해야 한다</a>. 공식처럼 계산만 해야하지, 변경해서는 안된다.</p>
