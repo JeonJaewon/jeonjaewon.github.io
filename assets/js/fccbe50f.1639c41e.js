@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_website||=[]).push([[1773],{744(t){t.exports=JSON.parse('{"tag":{"label":"retrospect","permalink":"/blog/tags/retrospect","allTagsPath":"/blog/tags","count":3,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/retrospect","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

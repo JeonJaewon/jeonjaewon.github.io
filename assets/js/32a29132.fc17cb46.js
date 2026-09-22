@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_website||=[]).push([[1288],{5679(a){a.exports=JSON.parse('{"tag":{"label":"redux-saga","permalink":"/blog/tags/redux-saga","allTagsPath":"/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/redux-saga","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

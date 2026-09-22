@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_website||=[]).push([[1401],{2398(a){a.exports=JSON.parse('{"tag":{"label":"overlay-kit","permalink":"/blog/tags/overlay-kit","allTagsPath":"/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/overlay-kit","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
